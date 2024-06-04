@@ -27,7 +27,7 @@ const schema = a.schema({
       id: a.string().required(),
       name: a.string().required(),
       description: a.string(),
-      book: a.ref('Book'),
+      book: a.ref("Book"),
       chapter: a.string(),
       page: a.integer().required(),
       pageEnd: a.integer(),
