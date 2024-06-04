@@ -7,12 +7,13 @@ export function useHeaderStyles() {
   const root = css({
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "stretch",
     justifyContent: "space-between",
     height: 60,
     background: theme.colors.primary,
     color: theme.colors.contrast,
     padding: "0.5rem 1rem",
+    boxSizing: "border-box",
   });
 
   const logoLink = css({

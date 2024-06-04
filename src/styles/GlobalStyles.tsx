@@ -39,7 +39,7 @@ export default function GlobalStyles() {
           a: {
             textDecoration: "none",
             color: darken(theme.colors.primary, 0.1),
-            transform: "ease all 0.5s",
+            transition: "ease all 0.5s",
             fontFamily: theme.font.serif,
             fontWeight: theme.font.weight.regular,
             "&:hover": {
