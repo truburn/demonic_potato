@@ -31,3 +31,5 @@ amplifyconfiguration*
 
 *storybook.log
 stories
+
+*.archive.*

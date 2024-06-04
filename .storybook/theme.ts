@@ -1,7 +1,7 @@
 import { create } from "@storybook/theming/create";
 
 export default create({
-  base: "light",
-  brandTitle: "Demonic Potato",
-  brandImage: "/text-only.svg",
+    base: "light",
+    brandTitle: "Demonic Potato",
+    brandImage: "/text-only.svg",
 });

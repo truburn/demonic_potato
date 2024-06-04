@@ -7,48 +7,48 @@ specifies that any user authenticated via an API key can "create", "read",
 "update", and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Todo: a
-    .model({
-      content: a.string(),
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
-  Book: a
-    .model({
-      id: a.string().required(),
-      name: a.string().required(),
-      author: a.string().required(),
-      cuisines: a.string().array(),
-      categories: a.string().array(),
-      chapters: a.string().array(),
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
-  Recipe: a
-    .model({
-      id: a.string().required(),
-      name: a.string().required(),
-      description: a.string(),
-      book: a.ref("Book"),
-      chapter: a.string(),
-      page: a.integer().required(),
-      pageEnd: a.integer(),
-      cuisines: a.string().array(),
-      categories: a.string().array(),
-      ingredients: a.string().array(),
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
+    Todo: a
+        .model({
+            content: a.string(),
+        })
+        .authorization((allow) => [allow.publicApiKey()]),
+    Book: a
+        .model({
+            id: a.string().required(),
+            name: a.string().required(),
+            author: a.string().required(),
+            cuisines: a.string().array(),
+            categories: a.string().array(),
+            chapters: a.string().array(),
+        })
+        .authorization((allow) => [allow.publicApiKey()]),
+    Recipe: a
+        .model({
+            id: a.string().required(),
+            name: a.string().required(),
+            description: a.string(),
+            book: a.ref("Book"),
+            chapter: a.string(),
+            page: a.integer().required(),
+            pageEnd: a.integer(),
+            cuisines: a.string().array(),
+            categories: a.string().array(),
+            ingredients: a.string().array(),
+        })
+        .authorization((allow) => [allow.publicApiKey()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
 
 export const data = defineData({
-  schema,
-  authorizationModes: {
-    defaultAuthorizationMode: "apiKey",
-    // API Key is used for a.allow.public() rules
-    apiKeyAuthorizationMode: {
-      expiresInDays: 30,
+    schema,
+    authorizationModes: {
+        defaultAuthorizationMode: "apiKey",
+        // API Key is used for a.allow.public() rules
+        apiKeyAuthorizationMode: {
+            expiresInDays: 30,
+        },
     },
-  },
 });
 
 /*== STEP 2 ===============================================================
