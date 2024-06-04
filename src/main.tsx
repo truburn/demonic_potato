@@ -7,7 +7,7 @@ import outputs from "../amplify_outputs.json";
 Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("dish")!).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );
