@@ -1,7 +1,7 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 import { Page } from "@layout/Page";
-import { AddBook } from "@pages/AddBook";
-import { AddRecipe } from "@pages/AddRecipe";
+import { EditBook } from "@pages/EditBook";
+import { EditRecipe } from "@pages/EditRecipe";
 import { Book } from "@pages/Book";
 import { ErrorPage } from "@pages/ErrorPage";
 import { Library } from "@pages/Library";
@@ -35,18 +35,12 @@ const routes = createBrowserRouter([
             loader: () => redirect("/library"),
           },
           {
-            path: "add",
-            element: <AddBook />,
+            path: "edit/:bookID?",
+            element: <EditBook />,
           },
           {
             path: ":bookID",
             element: <Book />,
-            children: [
-              {
-                path: "edit",
-                element: <AddBook />,
-              },
-            ],
           },
         ],
       },
@@ -58,8 +52,8 @@ const routes = createBrowserRouter([
             loader: () => redirect("/recipes"),
           },
           {
-            path: "add",
-            element: <AddRecipe />,
+            path: "edit/:recipeID?",
+            element: <EditRecipe />,
           },
           {
             path: ":recipeID",

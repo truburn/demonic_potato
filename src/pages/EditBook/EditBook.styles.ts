@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 
-export function useAddBookStyles() {
+export function useEditBookStyles() {
   const root = css({});
 
   return { root };
