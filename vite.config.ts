@@ -18,12 +18,12 @@ export default defineConfig({
       {
         find: "@components",
         replacement: fileURLToPath(
-          new URL("./src/components", import.meta.url),
+          new URL("./src/components", import.meta.url)
         ),
       },
       {
-        find: "@form",
-        replacement: fileURLToPath(new URL("./src/form", import.meta.url)),
+        find: "@elements",
+        replacement: fileURLToPath(new URL("./src/elements", import.meta.url)),
       },
       {
         find: "@layout",
