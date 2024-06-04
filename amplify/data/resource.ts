@@ -14,20 +14,22 @@ const schema = a.schema({
     .authorization((allow) => [allow.publicApiKey()]),
   Book: a
     .model({
-      id: a.string().required(),
+      bookID: a.id().required(),
       name: a.string().required(),
       author: a.string().required(),
       cuisines: a.string().array(),
       categories: a.string().array(),
       chapters: a.string().array(),
+      recipes: a.hasMany("Recipe", "recipeID"),
     })
+    .identifier(["bookID"])
     .authorization((allow) => [allow.publicApiKey()]),
   Recipe: a
     .model({
-      id: a.string().required(),
+      recipeID: a.id().required(),
       name: a.string().required(),
       description: a.string(),
-      book: a.ref("Book"),
+      book: a.belongsTo("Book", "bookID"),
       chapter: a.string(),
       page: a.integer().required(),
       pageEnd: a.integer(),
@@ -35,6 +37,7 @@ const schema = a.schema({
       categories: a.string().array(),
       ingredients: a.string().array(),
     })
+    .identifier(["recipeID"])
     .authorization((allow) => [allow.publicApiKey()]),
 });
 
