@@ -12,6 +12,30 @@ const schema = a.schema({
       content: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
+  Book: a
+    .model({
+      id: a.string().required(),
+      name: a.string().required(),
+      author: a.string().required(),
+      cuisines: a.string().array(),
+      categories: a.string().array(),
+      chapters: a.string().array(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
+  Recipe: a
+    .model({
+      id: a.string().required(),
+      name: a.string().required(),
+      description: a.string(),
+      book: a.ref('Book'),
+      chapter: a.string(),
+      page: a.integer().required(),
+      pageEnd: a.integer(),
+      cuisines: a.string().array(),
+      categories: a.string().array(),
+      ingredients: a.string().array(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
