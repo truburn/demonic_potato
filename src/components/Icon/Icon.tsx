@@ -7,10 +7,10 @@ export function Icon(props: IconProps) {
   const classes = useIconStyles();
 
   return (
-      <FontAwesomeIcon 
-        {...iconProps}
-        id={id}
-        className={cx(classes.root, className)}
-      />
-  )
+    <FontAwesomeIcon
+      {...iconProps}
+      id={id}
+      className={cx(classes.root, className)}
+    />
+  );
 }
