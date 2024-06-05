@@ -20,7 +20,7 @@ const schema = a.schema({
       cuisines: a.string().array(),
       categories: a.string().array(),
       chapters: a.string().array(),
-      recipes: a.hasMany("Recipe", "recipeID"),
+      recipes: a.hasMany("Recipe", "bookID"),
     })
     .identifier(["bookID"])
     .authorization((allow) => [allow.publicApiKey()]),
@@ -29,6 +29,7 @@ const schema = a.schema({
       recipeID: a.id().required(),
       name: a.string().required(),
       description: a.string(),
+      bookID: a.id().required(),
       book: a.belongsTo("Book", "bookID"),
       chapter: a.string(),
       page: a.integer().required(),
