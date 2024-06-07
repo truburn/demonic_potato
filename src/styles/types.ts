@@ -37,4 +37,7 @@ export interface DemonicTheme {
       xxl: number;
     };
   };
+  widths: {
+    paddedContent: number;
+  };
 }

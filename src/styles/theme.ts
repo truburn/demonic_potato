@@ -46,6 +46,9 @@ const theme: DemonicTheme = {
       xxl: 32,
     },
   },
+  widths: {
+    paddedContent: 840,
+  },
 };
 
 export default theme;

@@ -9,9 +9,9 @@ export function Page() {
   return (
     <>
       <Header />
-      <main className={classes.root}>
+      <div className={classes.root}>
         <Outlet />
-      </main>
+      </div>
       <Footer />
     </>
   );

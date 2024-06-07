@@ -6,7 +6,7 @@ export function useErrorPageStyles() {
 
   const root = css({
     flex: 1,
-    maxWidth: 850,
+    maxWidth: theme.widths.paddedContent,
     margin: "0 auto",
   });
 
