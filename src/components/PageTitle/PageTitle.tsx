@@ -9,15 +9,12 @@ export interface PageTitleProps {
 }
 
 export function PageTitle(props: PageTitleProps) {
-  const { children, className, ...rest} = props;
+  const { children, className, ...rest } = props;
   const classes = usePageTitleStyles();
 
   return (
-    <h1
-      {...rest}
-      className={cx(classes.root, className)}
-    >
+    <h1 {...rest} className={cx(classes.root, className)}>
       {children}
     </h1>
-  )
+  );
 }

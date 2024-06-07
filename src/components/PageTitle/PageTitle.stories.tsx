@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { PageTitle as PageTitleComponent } from '@components/PageTitle';
+import { PageTitle as PageTitleComponent } from "@components/PageTitle";
 
 const meta: Meta<typeof PageTitleComponent> = {
   component: PageTitleComponent,
@@ -11,6 +11,6 @@ type Story = StoryObj<typeof meta>;
 
 export const PageTitle: Story = {
   args: {
-    children: 'Sample Page Title'
-  }
+    children: "Sample Page Title",
+  },
 };
