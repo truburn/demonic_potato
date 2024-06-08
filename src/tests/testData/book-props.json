@@ -1,0 +1,151 @@
+{
+  "bookID": "test-book-data",
+  "name": "Cookbook Test",
+  "author": "Some Author",
+  "description": "This is a sample cookbook to use for testing.",
+  "isFavorite": false,
+  "cuisines": ["New England", "American"],
+  "categories": ["Breakfast", "Brunch", "Dessert"],
+  "chapters": [
+    {
+      "name": "Soups",
+      "recipes": [
+        {
+          "recipeID": "recipe-001",
+          "name": "Test Recipe 001",
+          "chapter": "Soups",
+          "isFavorite": false,
+          "page": 0,
+          "bookID": "test-book-data",
+          "book": {
+            "bookID": "test-book-data",
+            "name": "Cookbook Test",
+            "author": "Some Author",
+            "description": "This is a sample cookbook to use for testing.",
+            "isFavorite": false,
+            "cuisines": ["New England", "American"],
+            "categories": ["Breakfast", "Brunch", "Dessert"],
+            "chapters": ["Soups", "Sides", "Beef Dishes"]
+          }
+        }
+      ]
+    },
+  {
+    "name": "Sides",
+    "recipes": [
+      {
+        "recipeID": "recipe-002",
+        "name": "Test Recipe 002",
+        "chapter": "Sides",
+        "isFavorite": false,
+        "page": 0,
+        "bookID": "test-book-data",
+        "book": {
+          "bookID": "test-book-data",
+          "name": "Cookbook Test",
+          "author": "Some Author",
+          "description": "This is a sample cookbook to use for testing.",
+          "isFavorite": false,
+          "cuisines": ["New England", "American"],
+          "categories": ["Breakfast", "Brunch", "Dessert"],
+          "chapters": ["Soups", "Sides", "Beef Dishes"]
+        }
+      },
+      {
+        "recipeID": "recipe-004",
+        "name": "Test Recipe 004",
+        "chapter": "Sides",
+        "isFavorite": false,
+        "page": 0,
+        "bookID": "test-book-data",
+        "book": {
+          "bookID": "test-book-data",
+          "name": "Cookbook Test",
+          "author": "Some Author",
+          "description": "This is a sample cookbook to use for testing.",
+          "isFavorite": false,
+          "cuisines": ["New England", "American"],
+          "categories": ["Breakfast", "Brunch", "Dessert"],
+          "chapters": ["Soups", "Sides", "Beef Dishes"]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Beef Dishes",
+  "recipes": [
+    {
+      "recipeID": "recipe-003",
+      "name": "Test Recipe 003",
+      "chapter": "Beef Dishes",
+      "isFavorite": false,
+      "page": 0,
+      "bookID": "test-book-data",
+      "book": {
+        "bookID": "test-book-data",
+        "name": "Cookbook Test",
+        "author": "Some Author",
+        "description": "This is a sample cookbook to use for testing.",
+        "isFavorite": false,
+        "cuisines": ["New England", "American"],
+        "categories": ["Breakfast", "Brunch", "Dessert"],
+        "chapters": ["Soups", "Sides", "Beef Dishes"]
+      }
+    }
+  ]
+}
+],
+  "recipes": [
+    {
+      "recipeID": "recipe-005",
+      "name": "Test Recipe 005",
+      "isFavorite": false,
+      "page": 0,
+      "bookID": "test-book-data",
+      "book": {
+        "bookID": "test-book-data",
+        "name": "Cookbook Test",
+        "author": "Some Author",
+        "description": "This is a sample cookbook to use for testing.",
+        "isFavorite": false,
+        "cuisines": ["New England", "American"],
+        "categories": ["Breakfast", "Brunch", "Dessert"],
+        "chapters": ["Soups", "Sides", "Beef Dishes"]
+      }
+    },
+    {
+      "recipeID": "recipe-006",
+      "name": "Test Recipe 006",
+      "isFavorite": false,
+      "page": 0,
+      "bookID": "test-book-data",
+      "book": {
+        "bookID": "test-book-data",
+        "name": "Cookbook Test",
+        "author": "Some Author",
+        "description": "This is a sample cookbook to use for testing.",
+        "isFavorite": false,
+        "cuisines": ["New England", "American"],
+        "categories": ["Breakfast", "Brunch", "Dessert"],
+        "chapters": ["Soups", "Sides", "Beef Dishes"]
+      }
+    },
+    {
+      "recipeID": "recipe-007",
+      "name": "Test Recipe 007",
+      "isFavorite": false,
+      "page": 0,
+      "bookID": "test-book-data",
+      "book": {
+        "bookID": "test-book-data",
+        "name": "Cookbook Test",
+        "author": "Some Author",
+        "description": "This is a sample cookbook to use for testing.",
+        "isFavorite": false,
+        "cuisines": ["New England", "American"],
+        "categories": ["Breakfast", "Brunch", "Dessert"],
+        "chapters": ["Soups", "Sides", "Beef Dishes"]
+      }
+    }
+  ]
+}
