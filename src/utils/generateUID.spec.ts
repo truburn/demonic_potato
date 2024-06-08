@@ -1,4 +1,4 @@
-import { generateUID } from "./generateUID";
+import { generateUID } from "@utils/generateUID";
 
 describe("generateUID", () => {
   it("has no prefix or suffix by default and only 5 segments", () => {

@@ -18,7 +18,7 @@ export default defineConfig({
       {
         find: "@components",
         replacement: fileURLToPath(
-          new URL("./src/components", import.meta.url),
+          new URL("./src/components", import.meta.url)
         ),
       },
       {
@@ -36,6 +36,10 @@ export default defineConfig({
       {
         find: "@styles",
         replacement: fileURLToPath(new URL("./src/styles", import.meta.url)),
+      },
+      {
+        find: "@tests",
+        replacement: fileURLToPath(new URL("./src/tests", import.meta.url)),
       },
       {
         find: "@utils",
