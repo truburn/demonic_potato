@@ -1,4 +1,4 @@
-import { usePageTitleStyles } from "@components/PageTitle";
+import { usePageTitleStyles } from "@elements/PageTitle";
 import { cx } from "@emotion/css";
 import { ReactNode } from "react";
 

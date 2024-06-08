@@ -1,6 +1,6 @@
 import { faPlateUtensils } from "@awesome.me/kit-3d36d6b3e3/icons/duotone/solid";
-import { Icon } from "@components/Icon";
-import { PageTitle } from "@components/PageTitle";
+import { Icon } from "@elements/Icon";
+import { PageTitle } from "@elements/PageTitle";
 import { usePageNotFoundStyles, useRedirectToHome } from "@pages/PageNotFound";
 import { Link } from "react-router-dom";
 

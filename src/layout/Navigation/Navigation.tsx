@@ -6,7 +6,7 @@ import {
   faFileCirclePlus,
 } from "@awesome.me/kit-3d36d6b3e3/icons/duotone/solid";
 import { faMagnifyingGlass } from "@awesome.me/kit-3d36d6b3e3/icons/classic/solid";
-import { Icon } from "@components/Icon";
+import { Icon } from "@elements/Icon";
 
 export function Navigation() {
   const classes = useNavigationStyles();

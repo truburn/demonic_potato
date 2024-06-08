@@ -1,4 +1,4 @@
-import { PageTitle } from "@components/PageTitle";
+import { PageTitle } from "@elements/PageTitle";
 import { cx } from "@emotion/css";
 import { Footer } from "@layout/Footer";
 import { Header } from "@layout/Header";

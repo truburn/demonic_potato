@@ -1,4 +1,4 @@
-import { useIconStyles, IconProps } from "@components/Icon";
+import { useIconStyles, IconProps } from "@elements/Icon";
 import { cx } from "@emotion/css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

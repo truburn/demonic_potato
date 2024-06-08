@@ -1,4 +1,4 @@
-import { Icon } from "@components/Icon";
+import { Icon } from "@elements/Icon";
 import { useFooterStyles } from "@layout/Footer";
 import { faCopyright } from "@awesome.me/kit-3d36d6b3e3/icons/classic/light";
 
