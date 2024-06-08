@@ -17,6 +17,13 @@ export function usePageTitleStyles() {
     borderColor: theme.colors.primary,
     borderWidth: 0,
     borderBottomWidth: 1,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "stretch",
+    justifyContent: "space-between",
+    [`@media (max-width: ${theme.widths.paddedContent}px)`]: {
+      marginTop: "0.25em",
+    },
   });
 
   return { root };
