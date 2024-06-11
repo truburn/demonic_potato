@@ -19,7 +19,7 @@ export function usePageTitleStyles() {
     borderBottomWidth: 1,
     display: "flex",
     flexDirection: "row",
-    alignItems: "stretch",
+    alignItems: "flex-end",
     justifyContent: "space-between",
     [`@media (max-width: ${theme.widths.paddedContent}px)`]: {
       marginTop: "0.25em",

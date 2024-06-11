@@ -3,13 +3,15 @@ export interface MessageColor {
   contrast: string;
 }
 
+export enum ColorVariant {
+  STANDARD = "standard",
+  CONTRAST = "contrast",
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+}
+
 export interface DemonicTheme {
-  colors: {
-    standard: string;
-    contrast: string;
-    primary: string;
-    secondary: string;
-  };
+  colors: Record<ColorVariant, string>;
   messageColors: {
     info: MessageColor;
     success: MessageColor;

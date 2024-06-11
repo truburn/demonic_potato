@@ -1,4 +1,4 @@
-import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
+import { ClientSchema, a, defineData } from "@aws-amplify/backend";
 
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
@@ -17,10 +17,12 @@ const schema = a.schema({
       bookID: a.id().required(),
       name: a.string().required(),
       author: a.string().required(),
+      description: a.string(),
       cuisines: a.string().array(),
       categories: a.string().array(),
       chapters: a.string().array(),
       recipes: a.hasMany("Recipe", "bookID"),
+      isFavorite: a.boolean(),
     })
     .identifier(["bookID"])
     .authorization((allow) => [allow.publicApiKey()]),
@@ -37,6 +39,8 @@ const schema = a.schema({
       cuisines: a.string().array(),
       categories: a.string().array(),
       ingredients: a.string().array(),
+      isFavorite: a.boolean(),
+      notes: a.json(),
     })
     .identifier(["recipeID"])
     .authorization((allow) => [allow.publicApiKey()]),

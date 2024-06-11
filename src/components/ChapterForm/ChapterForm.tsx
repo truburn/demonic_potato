@@ -1,12 +1,15 @@
-import { ChapterFormProps, useChapterFormStyles } from '@components/ChapterForm';
+import {
+  ChapterFormProps,
+  useChapterFormStyles,
+} from "@components/ChapterForm";
 import { useEffect } from "react";
 
 export function ChapterForm(props: ChapterFormProps) {
   const classes = useChapterFormStyles();
 
   useEffect(() => {
-    console.log('ChapterForm', props);
+    console.log("ChapterForm", props);
   }, [props]);
 
-  return <div className={classes.root}>Chapter Form Component</div>
+  return <div className={classes.root}>Chapter Form Component</div>;
 }
