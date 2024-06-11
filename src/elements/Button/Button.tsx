@@ -18,6 +18,7 @@ export function Button(props: ButtonProps) {
     iconProps = {},
     color,
     disabled,
+    title,
   } = props;
   const classes = useButtonStyles(color);
   const variant =
@@ -36,6 +37,7 @@ export function Button(props: ButtonProps) {
         className,
       )}
       disabled={disabled}
+      title={title}
     >
       {buttonType === ButtonType.ICON && icon ? (
         <Icon icon={icon} {...iconProps} />

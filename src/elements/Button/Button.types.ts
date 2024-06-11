@@ -14,6 +14,7 @@ export interface ButtonProps {
   variant?: ButtonVariant;
   color?: ColorVariant;
   disabled?: boolean;
+  title?: string;
 }
 
 export enum ButtonType {
