@@ -46,7 +46,7 @@ const routes = createBrowserRouter([
             element: <EditBook />,
             loader: async ({ params }) => {
               if (!params.bookID) {
-                return null;
+                return INITIAL_BOOK_FORM_VALUES;
               }
 
               const { data } = await client.models.Book.get({
