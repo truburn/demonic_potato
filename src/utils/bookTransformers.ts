@@ -2,17 +2,17 @@ import { BookProps, BookResponse } from "@pages/Book";
 import { RecipeProps } from "@pages/Recipe";
 
 export function reduceBookProps(book: BookResponse): BookProps {
-  const chapters = book.chapters?.map((name) => ({
-    name,
-    recipes: book.recipes?.filter(({ chapter }) => chapter === name),
-  }));
+  const chapters = book.chapters?.map((name) => {
+    const recipes = book.recipes?.filter(({ chapter }) => chapter === name);
+    return { name, recipes: sortRecipesByPage(recipes) };
+  });
 
   const recipes = book.recipes?.filter(({ chapter }) => !chapter);
 
   return {
     ...book,
     chapters,
-    recipes,
+    recipes: sortRecipesByPage(recipes),
   } as BookProps;
 }
 
@@ -25,15 +25,17 @@ export function reduceBookResponse(book: BookProps): BookResponse {
     return chapter.name;
   });
 
-  recipes.sort((a, b) => {
-    if (a.recipeID > b.recipeID) return 1;
-    if (a.recipeID < b.recipeID) return -1;
-    return 0;
-  });
-
   return {
     ...book,
     chapters,
-    recipes,
+    recipes: sortRecipesByPage(recipes),
   } as BookResponse;
+}
+
+export function sortRecipesByPage(recipes: RecipeProps[] = []): RecipeProps[] {
+  return recipes.sort((a, b) => {
+    if (a.page > b.page) return 1;
+    if (a.page < b.page) return -1;
+    return 0;
+  });
 }
