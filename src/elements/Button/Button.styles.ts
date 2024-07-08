@@ -23,6 +23,10 @@ export function useButtonStyles(color: ColorVariant = ColorVariant.STANDARD) {
     cursor: "pointer",
     transition: "ease all 0.5s",
     padding: "0.25em 0.5em",
+    paddingTop: 6,
+    fontFamily: theme.font.sans,
+    lineHeight: 1.15,
+    fontSize: theme.font.size.regular,
     "&&:disabled": {
       opacity: 0.5,
       cursor: "not-allowed",
