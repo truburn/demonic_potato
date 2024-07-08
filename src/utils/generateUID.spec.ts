@@ -4,7 +4,7 @@ describe("generateUID", () => {
   it("has no prefix or suffix by default and only 5 segments", () => {
     const uid = generateUID();
     expect(uid).toBeDefined();
-    expect(uid.split("-")).toHaveLength(5);
+    expect(uid.split("-")).toHaveLength(4);
   });
 
   it("has a passed prefix", () => {
@@ -12,7 +12,7 @@ describe("generateUID", () => {
     expect(uid).toBeDefined();
     const uidParts = uid.split("-");
     expect(uidParts.indexOf("uid")).toEqual(0);
-    expect(uidParts).toHaveLength(6);
+    expect(uidParts).toHaveLength(5);
   });
 
   it("has a passed suffix", () => {
@@ -20,7 +20,7 @@ describe("generateUID", () => {
     expect(uid).toBeDefined();
     const uidParts = uid.split("-");
     expect(uidParts.indexOf("uid")).toEqual(uidParts.length - 1);
-    expect(uidParts).toHaveLength(6);
+    expect(uidParts).toHaveLength(5);
   });
 
   it("has both a prefix and a suffix", () => {
@@ -29,12 +29,12 @@ describe("generateUID", () => {
     const uidParts = uid.split("-");
     expect(uidParts.indexOf("prefix")).toEqual(0);
     expect(uidParts.indexOf("suffix")).toEqual(uidParts.length - 1);
-    expect(uidParts).toHaveLength(7);
+    expect(uidParts).toHaveLength(6);
   });
 
-  it("has custom radix and start", () => {
-    const uid = generateUID({ radix: 32, start: 4 });
+  it("has custom radix, start, and length", () => {
+    const uid = generateUID({ radix: 32, start: 4, length: 2 });
     expect(uid).toBeDefined();
-    expect(uid.split("-")).toHaveLength(5);
+    expect(uid.split("-")).toHaveLength(2);
   });
 });
