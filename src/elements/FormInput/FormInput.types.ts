@@ -35,6 +35,8 @@ export interface InputComponentProps {
   disabled?: boolean;
   error?: boolean;
   className?: string;
+  onChange: (value?: any) => void;
+  value?: any;
 }
 
 export interface TextInput {
@@ -42,7 +44,6 @@ export interface TextInput {
   maxLength?: number;
   multiline?: boolean;
   placeholder?: string;
-  pattern?: string;
   showMaxLength?: boolean;
 }
 

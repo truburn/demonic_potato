@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { FormInput, FormInputProps, InputProps } from "@elements/FormInput";
 import { css } from "@emotion/css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import storyVariations from "./storyVariations.json";
 
 const meta: Meta<typeof FormInput> = {
   component: FormInput,
@@ -12,7 +13,9 @@ export default meta;
 type Story = StoryObj<typeof FormInput>;
 
 export const TextInput: Story = {
-  render: (args: FormInputProps) => <MockStory variations={[]} {...args} />,
+  render: (args: FormInputProps) => (
+    <MockStory variations={storyVariations.text} {...args} />
+  ),
   args: {
     name: "text-input",
     label: "Text Input",
@@ -142,6 +145,22 @@ const STANDARD_VARIATIONS = [
 
 function MockStory(props: MockStoryProps) {
   const { variations, name, input, label } = props;
+  const [values, setValues] = useState<Record<string, any>>({});
+
+  useEffect(() => {
+    const tmpValues = Object.fromEntries(
+      variations.map((variant) => [[name, variant.id].join("-"), variant]),
+    );
+    setValues(tmpValues);
+  }, [variations, name]);
+
+  const handleChange = (name: string, value?: any) => {
+    const tmpValues = {
+      ...values,
+      [name]: value,
+    };
+    setValues(tmpValues);
+  };
 
   return (
     <div className={classes.story}>
@@ -157,15 +176,28 @@ function MockStory(props: MockStoryProps) {
               name={varName}
               label={varLabel}
               input={input}
+              onChange={handleChange}
             />
           </div>
         );
       })}
-      {variations.map((variant) => (
-        <div key={variant.id} className={classes.row}>
-          {variant.label}
-        </div>
-      ))}
+      {variations.map((variant) => {
+        const varID = [input.type, variant.id].join("-");
+        const varLabel = [variant.label, label].join(" ");
+        const varName = [name, variant.id].join("-");
+        return (
+          <div key={varID} className={classes.row}>
+            <FormInput
+              {...variant}
+              id={varID}
+              name={varName}
+              label={varLabel}
+              input={input}
+              onChange={handleChange}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

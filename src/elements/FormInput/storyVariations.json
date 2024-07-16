@@ -1,6 +1,44 @@
 {
-  "text": [],
-  "textarea": [],
+  "text": [
+    {
+      "id": "placeholder",
+      "label": "Placeholder",
+      "placeholder": "Input with Placeholder Text"
+    },
+    {
+      "id": "max-length",
+      "label": "Max Length",
+      "placeholder": "Input with Max Length Set",
+      "maxLength": 20
+    },
+    {
+      "id": "max-length-show-remaining",
+      "label": "Show Remaining Length",
+      "placeholder": "Show remaining length while typing",
+      "maxLength": 30,
+      "showMaxLength": true
+    }
+  ],
+  "textarea": [
+    {
+      "id": "placeholder",
+      "label": "Placeholder",
+      "placeholder": "Input with Placeholder Text"
+    },
+    {
+      "id": "max-length",
+      "label": "Max Length",
+      "placeholder": "Input with Max Length Set",
+      "maxLength": 20
+    },
+    {
+      "id": "max-length-show-remaining",
+      "label": "Show Remaining Length",
+      "placeholder": "Show remaining length while typing",
+      "maxLength": 30,
+      "showMaxLength": true
+    }
+  ],
   "checkbox": [],
   "radioGroup": [],
   "select": [],

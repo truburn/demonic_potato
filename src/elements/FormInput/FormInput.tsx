@@ -1,7 +1,6 @@
-import { useFormInputStyles, FormInputProps } from "@elements/FormInput";
+import { FormInputProps, useFormInputStyles } from "@elements/FormInput";
 import { cx } from "@emotion/css";
 import { generateUID } from "@utils/generateUID";
-import { ElementType } from "react";
 
 export function FormInput(_props: FormInputProps) {
   const {
@@ -13,9 +12,12 @@ export function FormInput(_props: FormInputProps) {
     hideLabel = false,
     input,
     name,
+    onChange,
   } = _props;
   const classes = useFormInputStyles();
   const id = idFromProps ?? generateUID({ prefix: input.type, suffix: name });
+
+  const handleOnChange = (value?: any) => onChange?.(name, value);
 
   return (
     <div className={cx(classes.root, className)}>
