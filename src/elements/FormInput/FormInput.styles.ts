@@ -6,5 +6,11 @@ export function useFormInputStyles() {
 
   const root = css({});
 
-  return { root };
+  const legend = css({});
+
+  const label = css({});
+
+  const input = css({});
+
+  return { root, legend, label, input };
 }

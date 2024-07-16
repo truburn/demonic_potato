@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
 
-export type FormInputProps = {
+export interface FormInputProps {
   className?: string;
+  labelClassName?: string;
+  inputClassName?: string;
   id?: string;
   errors?: ReactNode[];
   helperText?: ReactNode;
@@ -9,28 +11,14 @@ export type FormInputProps = {
   required?: boolean;
   disabled?: boolean;
   tooltip?: ReactNode;
+  label: string;
+  hideLabel?: boolean;
   name: string;
-} & (
-  | {
-      legend: ReactNode;
-      label?: ReactNode;
-    }
-  | {
-      legend?: ReactNode;
-      label: ReactNode;
-    }
-) &
-  (
-    | {
-        asFieldSet?: true;
-        collapsible?: boolean;
-      }
-    | {
-        asFieldSet?: false;
-        collapsible?: never;
-      }
-  ) &
-  InputProps;
+  onChange?: (name: string, value?: any) => void;
+  value?: any;
+  defaultValue?: any;
+  input: InputProps;
+}
 
 export type InputProps =
   | TextInput
@@ -40,24 +28,28 @@ export type InputProps =
   | CheckboxGroup
   | SelectInput;
 
+export interface InputComponentProps {
+  name: string;
+  id: string;
+  required?: boolean;
+  disabled?: boolean;
+  error?: boolean;
+  className?: string;
+}
+
 export interface TextInput {
   type: "text";
-  format: "text";
   maxLength?: number;
   multiline?: boolean;
   placeholder?: string;
   pattern?: string;
-  defaultValue?: string;
-  value?: string;
-  onChange: (name: string, value?: string) => void;
+  showMaxLength?: boolean;
 }
 
 export interface LoginInput {
   type: "login";
   format: "email" | "password";
   maxLength?: number;
-  value?: string;
-  onChange: (name: string, value?: string) => void;
 }
 
 export interface NumberInput {
@@ -66,31 +58,24 @@ export interface NumberInput {
   max?: number;
   increment?: number;
   float?: boolean;
-  defaultValue?: number;
-  value?: number;
-  onChange: (name: string, value?: number) => void;
+  isRange?: boolean;
 }
 
 export interface CheckboxInput {
   type: "checkbox";
-  defaultValue?: boolean;
-  onChange: (name: string, value?: boolean) => void;
   asSwitch?: boolean;
 }
 
 export interface CheckboxGroupOption {
   label: ReactNode;
   description?: ReactNode;
-  asSwitch?: boolean;
 }
 
 export interface CheckboxGroup {
   type: "checkbox-group";
   options: CheckboxGroupOption[];
-  defaultValue?: Record<string, boolean>;
-  value?: Record<string, boolean>;
-  onChange: (name: string, value?: Record<string, boolean>) => void;
   multiple?: boolean;
+  asSwitch?: boolean;
 }
 
 export interface SelectOption {
@@ -99,37 +84,9 @@ export interface SelectOption {
   data?: any;
 }
 
-type SingleSelect = {
-  multiple?: false;
-  value?: SelectOption;
-  onChange: (name: string, value?: SelectOption) => void;
-} & (
-  | {
-      nullable?: false;
-      defaultValue?: SelectOption;
-    }
-  | {
-      nullable?: true;
-      defaultValue: SelectOption;
-    }
-);
-
-type MultiSelect = {
-  multiple?: true;
-  value?: SelectOption[];
-  onChange: (name: string, value?: SelectOption[]) => void;
-} & (
-  | {
-      nullable?: false;
-      defaultValue?: SelectOption[];
-    }
-  | {
-      nullable?: true;
-      defaultValue: SelectOption[];
-    }
-);
-
-export type SelectInput = {
+export interface SelectInput {
   type: "select";
   options: SelectOption[];
-} & (SingleSelect | MultiSelect);
+  multiple?: boolean;
+  nullable?: boolean;
+}
